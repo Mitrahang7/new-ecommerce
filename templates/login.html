@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Login page</title> {% endblock %}
+
+ 
+
+{% block content %}
+
+<!-- Header-->
+<header class="bg-dark py-5">
+  <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+          <h1 class="display-4 fw-bolder">Shop in style</h1>
+          <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+      </div>
+  </div>
+</header>
+
+<br><br><br>
+
+
+ <div class="container d-flex justify-content-center">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+    <div class="card-body">
+      <h3 class="card-title text-center mb-4">Login</h3>
+      
+      <form method="POST" action=".">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Enter your Username" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<br><br><br><br><br>
+
+{% endblock %}

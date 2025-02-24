@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+    <div class="card-body">
+
+
+<h2>Update Your Info</h2>
+
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Phone:</label>
+    <input type="text" name="phone" value="{{ profile.phone }}" class="form-control" placeholder="Phone"><br>
+
+    <label>Address 1:</label>
+    <input type="text" name="address1" value="{{ profile.address1 }}" class="form-control" placeholder="Address 1"><br>
+
+    <label>Address 2:</label>
+    <input type="text" name="address2" value="{{ profile.address2 }}" class="form-control" placeholder="Address 2"><br>
+
+    <label>City:</label>
+    <input type="text" name="city" value="{{ profile.disrtict }}" class="form-control" placeholder="City"><br>
+
+    <label>State:</label>
+    <input type="text" name="state" value="{{ profile.province }}" class="form-control" placeholder="State"><br>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
