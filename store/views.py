@@ -5,6 +5,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+
+@login_required(login_url='login')
 def home(request):
   products=Product.objects.all()
   categories = Category.objects.all()
